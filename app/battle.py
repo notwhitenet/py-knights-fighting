@@ -18,10 +18,8 @@ class Battle:
         defender.take_damage(defender_damage)
 
     def run(self) -> Dict[str, int]:
-        self.knights["lancelot"].prepare_for_battle()
-        self.knights["arthur"].prepare_for_battle()
-        self.knights["mordred"].prepare_for_battle()
-        self.knights["red_knight"].prepare_for_battle()
+        for knight in self.knights.values():
+            knight.prepare_for_battle()
 
         self.fight("lancelot", "mordred")
         self.fight("arthur", "red_knight")
